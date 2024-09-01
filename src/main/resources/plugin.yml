@@ -1,0 +1,6 @@
+name: LoginPlugin
+version: '1.0'
+main: net.abhinav.loginplugin.LoginPlugin
+api-version: '1.21'
+authors: [ Abhinav VS ]
+description: /plugins can only be used by op
