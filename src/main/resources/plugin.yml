@@ -3,4 +3,23 @@ version: '1.0'
 main: net.abhinav.loginplugin.LoginPlugin
 api-version: '1.21'
 authors: [ Abhinav VS ]
-description: /plugins can only be used by op
+description: |
+  A login plugin for Minecraft that handles user registration, login, password resets,
+  and security questions. Players are required to log in before accessing the main server.
+commands:
+  login:
+    description: Logs in a player.
+    usage: /<command> <password>
+  reg:
+    description: Registers a new user.
+    usage: /<command> <password1> <password2>
+  resetpass:
+    description: Resets the player's password.
+    usage: /<command> <new-password>
+permissions:
+  loginplugin.use:
+    description: Allows using login commands.
+    default: true
+  loginplugin.admin:
+    description: Allows using administrative commands like registration and password resets.
+    default: op

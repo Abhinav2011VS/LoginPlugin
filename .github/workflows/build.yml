@@ -1,0 +1,31 @@
+name: Build Plugin
+
+on: push
+
+jobs:
+  release:
+    runs-on: windows-latest
+
+    steps:
+      - name: Check out Git repository
+        uses: actions/checkout@v3
+
+      - name: Set up JDK 21
+        uses: actions/setup-java@v3
+        with:
+          distribution: 'temurin'
+          java-version: '21'
+
+      - name: List directory contents
+        run: dir
+        shell: cmd
+
+      - name: Build with Gradle
+        run: ./gradlew.bat build
+        shell: cmd
+
+      - name: Upload Artifacts
+        uses: actions/upload-artifact@v3
+        with:
+          name: built-jar
+          path: build/libs/*.jar
